@@ -62,7 +62,7 @@ A comprehensive GUI application to calculate the profitability of AI mining oper
    ```
 
 ### Using Pre-compiled Executables
-Download the latest release for your operating system from the [Releases](https://github.com/yourusername/ai-mining-calculator/releases) page.
+Download the latest release for your operating system from the [Releases](https://github.com/Flowtrica/ai-mining-calculator/releases) page.
 
 ## 🔨 Compilation Instructions
 
@@ -199,7 +199,7 @@ Power values include typical gaming/mining loads. The calculator adds ~100W syst
 
 ## 📄 License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+This project is licensed under the MIT License - see the [LICENSE](https://github.com/Flowtrica/ai-mining-calculator/blob/main/license.md) file for details.
 
 ## 🙏 Acknowledgments
 
@@ -210,7 +210,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 ## 📞 Support
 
 If you encounter any issues or have questions:
-1. Check the [Issues](https://github.com/yourusername/ai-mining-calculator/issues) page
+1. Check the [Issues](https://github.com/Flowtrica/ai-mining-calculator/issues) page
 2. Create a new issue with detailed information about your problem
 3. Include your operating system, Python version, and error messages
 
