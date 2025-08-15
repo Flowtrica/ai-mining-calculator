@@ -199,7 +199,7 @@ Power values include typical gaming/mining loads. The calculator adds ~100W syst
 
 ## 📄 License
 
-This project is licensed under the MIT License - see the [LICENSE](https://github.com/Flowtrica/ai-mining-calculator/blob/main/license.md) file for details.
+This project is licensed under the MIT License - see the [LICENSE](https://github.com/Flowtrica/ai-mining-calculator/blob/main/license.txt) file for details.
 
 ## 🙏 Acknowledgments
 
