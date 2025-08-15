@@ -2,7 +2,7 @@
 
 A comprehensive GUI application to calculate the profitability of AI mining operations using services like Salad.com, Vast.ai, and similar platforms. This calculator helps you determine if AI mining is profitable for your hardware setup, taking into account electricity costs, hardware expenses, and various pricing models.
 
-![AI Mining Calculator Screenshot](C:\ai-mining-calculator\ai-mining-calculator\apc.png)
+![AI Mining Calculator Screenshot](https://github.com/Flowtrica/ai-mining-calculator/blob/main/apc.png)
 
 ## 🚀 Features
 
