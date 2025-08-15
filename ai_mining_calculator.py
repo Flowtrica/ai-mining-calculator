@@ -163,8 +163,7 @@ class AIMiningCalculator:
         ttk.Label(input_frame, text="Hardware Cost:").grid(row=3, column=0, sticky=tk.W, pady=2)
         self.hardware_cost_var = tk.StringVar(value="1500")
         ttk.Entry(input_frame, textvariable=self.hardware_cost_var, width=15).grid(row=3, column=1, sticky=tk.W, pady=2)
-        self.hardware_cost_label = ttk.Label(input_frame, text="(in selected currency)")
-        self.hardware_cost_label.grid(row=3, column=2, sticky=tk.W, pady=2)
+        ttk.Label(input_frame, text="(in selected currency)").grid(row=3, column=2, sticky=tk.W, pady=2)
         
         # AI Mining Income
         ttk.Label(input_frame, text="AI Mining Income ($/hour):").grid(row=4, column=0, sticky=tk.W, pady=2)
@@ -345,6 +344,7 @@ class AIMiningCalculator:
             # Calculate profits (in USD)
             profit_per_hour_usd = net_income_per_hour - avg_elec_cost_per_hour_usd
             profit_per_24h_usd = profit_per_hour_usd * 24
+            profit_per_year_usd = profit_per_hour_usd * 24 * 365.25
             
             # Calculate hardware recovery time
             if profit_per_hour_usd > 0:
@@ -370,7 +370,7 @@ class AIMiningCalculator:
             self.display_results(
                 power_kw, hardware_cost_usd, income_per_hour, platform_cut,
                 net_income_per_hour, avg_elec_cost_per_hour_usd, profit_per_hour_usd,
-                profit_per_24h_usd, recovery_days, recovery_months,
+                profit_per_24h_usd, profit_per_year_usd, recovery_days, recovery_months,
                 yearly_profits_usd, exchange_rate, currency_symbol
             )
             
@@ -381,7 +381,7 @@ class AIMiningCalculator:
     
     def display_results(self, power_kw, hardware_cost_usd, income_per_hour, platform_cut,
                        net_income_per_hour, avg_elec_cost_per_hour_usd, profit_per_hour_usd,
-                       profit_per_24h_usd, recovery_days, recovery_months,
+                       profit_per_24h_usd, profit_per_year_usd, recovery_days, recovery_months,
                        yearly_profits_usd, exchange_rate, currency_symbol):
         
         self.results_text.delete(1.0, tk.END)
@@ -409,6 +409,7 @@ PROFITABILITY RESULTS:
 ===============================================
 • Profit per Hour: {format_currency(convert_currency(profit_per_hour_usd))}
 • Profit per 24 Hours: {format_currency(convert_currency(profit_per_24h_usd))}
+• Profit per Year: {format_currency(convert_currency(profit_per_year_usd))}
 
 HARDWARE RECOVERY:
 """
@@ -465,6 +466,7 @@ SUMMARY:
             'avg_elec_cost_per_hour_usd': avg_elec_cost_per_hour_usd,
             'profit_per_hour_usd': profit_per_hour_usd,
             'profit_per_24h_usd': profit_per_24h_usd,
+            'profit_per_year_usd': profit_per_year_usd,
             'recovery_days': recovery_days,
             'recovery_months': recovery_months,
             'yearly_profits_usd': yearly_profits_usd,
@@ -526,6 +528,7 @@ SUMMARY:
                     writer.writerow(["PROFITABILITY RESULTS"])
                     writer.writerow(["Profit per Hour", self.last_results['profit_per_hour_usd'] * self.last_results['exchange_rate']])
                     writer.writerow(["Profit per 24 Hours", self.last_results['profit_per_24h_usd'] * self.last_results['exchange_rate']])
+                    writer.writerow(["Profit per Year", self.last_results['profit_per_year_usd'] * self.last_results['exchange_rate']])
                     writer.writerow([])
                     
                     # Recovery
